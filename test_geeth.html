@@ -1,0 +1,97 @@
+<html>
+<head>
+
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jspdf.js"></script>
+	<script type="text/javascript" src="Blob.js"></script>
+	<script type="text/javascript" src="FileSaver.js"></script>
+
+</head>
+<body>
+<h1>some text</h1>
+
+<h1>some other text</h1>
+
+<h1>some other other text1</h1>
+<h1>some other other text2</h1>
+<h1>some other other text3</h1>
+<h1>some other other text4</h1>
+<h1>some other other text5</h1>
+<h1>some other other text6</h1>
+<h1>some other other text7</h1>
+<h1>some other other text8</h1>
+<h1>some other other text9</h1>
+<h1>some other other text10</h1>
+<h1>some other other text11</h1>
+<h1>some other other text12</h1>
+<h1>some other other text13</h1>
+<h1>some other other text14</h1>
+<h1>some other other text15</h1>
+<h1>some other other text16</h1>
+<h1>some other other text17</h1>
+<h1>some other other text18</h1>
+<h1>some other other text19</h1>
+<h1>some other other text20</h1>
+<h1>some other other text21</h1>
+<h1>some other other text22</h1>
+<h1>some other other text23</h1>
+<h1>some other other text24</h1>
+<h1>some other other text25</h1>
+<h1>some other other text26</h1>
+<h1>some other other text27</h1>
+<h1>some other other text28</h1>
+<h1>some other other text29</h1>
+<h1>some other other text30</h1>
+<h1>some other other text31</h1>
+<h1>some other other text32</h1>
+<h1>some other other text33</h1>
+<h1>some other other text34</h1>
+<h1>some other other text35</h1>
+<h1>some other other text36</h1>
+<h1>New Text</h1>
+<button name="CreatePDF" value="CreatePDF" onclick="createPDF()">CreatePDF</button>
+<script type="text/javascript">
+
+ function createPDF() {
+        var doc = new jsPDF();
+
+// We'll make our own renderer to skip this editor
+        var specialElementHandlers = {
+            '#editor':function (element, renderer) {
+                return true;
+            }
+        };
+
+// All units are in the set measurement for the document
+// This can be changed to "pt" (points), "mm" (Default), "cm", "in"
+        doc.fromHTML(document.documentElement.innerHTML, 15, 15, {
+            'width':170,
+            'elementHandlers':specialElementHandlers
+        });
+
+
+     doc.autoPrint();
+
+	 var data = doc.output();
+	 console.log(data);
+	 var buffer = new ArrayBuffer(data.length);
+	 var array = new Uint8Array(buffer);
+
+	for (var i = 0; i < data.length; i++) {
+		array[i] = data.charCodeAt(i);
+	}
+
+	var blob = new Blob(
+    [array],
+    {type: 'application/pdf', encoding: 'raw'}
+);
+
+	saveAs(blob, "Htmlpdf.pdf");
+     //doc.output("dataurlnewwindow")
+    }
+</script>
+</body>
+</html>
+
+

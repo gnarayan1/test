@@ -1,0 +1,77 @@
+{
+    "id": {
+    "type": "number",
+        "colWidth": "10"
+},
+    "firstOccurred": {
+    "type": "date",
+        "colWidth": "15"
+},
+    "lastOccurred": {
+    "type": "date",
+        "colWidth": "15"
+},
+    "zen_eventid": {
+    "type": "text",
+        "colWidth": "25"
+},
+    "alert": {
+    "type": "text",
+        "colWidth": "15"
+},  "ticket.ticketID": {
+    "type": "text",
+    "colWidth": "15"
+},
+    "entity": {
+    "type": "text",
+        "colWidth": "15"
+},
+    "dedupid": {
+    "type": "text",
+        "colWidth": "30"
+},
+    "discriminator": {
+    "type": "text",
+        "colWidth": "25"
+},
+    "groups": {
+    "type": "text",
+        "colWidth": "6"
+},
+    "message": {
+    "type": "text",
+        "colWidth": "25"
+},
+    "description": {
+    "type": "text",
+        "colWidth": "25"
+},
+    "count": {
+    "type": "number",
+        "colWidth": "5"
+},
+    "severity": {
+    "type": "text",
+        "colWidth": "8"
+},
+    "connector": {
+    "type": "text",
+        "colWidth": "12"
+},
+    "state": {
+    "type": "text",
+        "colWidth": "8"
+},
+    "timestamp": {
+    "type": "number",
+        "colWidth": "15"
+},
+    "owner": {
+    "type": "text",
+        "colWidth": "8"
+},
+    "ticketId": {
+    "type": "text",
+        "colWidth": "8"
+}
+}
